@@ -74,9 +74,9 @@ body {
     box-shadow: #0F11001F 0px 3px 12px 0px;
 }
 
-.diaicon{
+/* .diaicon{ */
     /* visibility: hidden; */
-}
+/* } */
 
 @media (max-width: 1400px) {
     .diaicon {
