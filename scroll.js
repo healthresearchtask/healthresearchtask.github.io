@@ -29,18 +29,40 @@ async function doDelay(){
     delayOver = true
 }
 
-$(window).scroll(()=>{
+function penis(){
     let height = window.innerHeight;
-    if(window.innerWidth < 1514){
-        return
-    }
+    // if(window.innerWidth < 1514){
+    //     return
+    // }
 
     if(delayOver){
         let url = document.location.href;
         let base = document.location.href.split("#")[0];
         let id = document.location.href.split("#")[1];
         
-        let st = $(this).scrollTop();
+                    // document.reload();
+        document.location.replace(base + "#part1");
+        // document.documentElement.scrollTop = document.body.scrollTop = height; 
+        doDelay()
+
+        lastScrollTop = height;
+
+
+    }     
+}
+
+$(window).scroll(()=>{
+    let height = window.innerHeight;
+    if(window.innerWidth < 1514){
+        return
+    }
+
+    let st = $(this).scrollTop();
+    if(delayOver){
+        let url = document.location.href;
+        let base = document.location.href.split("#")[0];
+        let id = document.location.href.split("#")[1];
+        
         if (st > lastScrollTop){
             switch (id) {
                 case "hero":
@@ -73,6 +95,6 @@ $(window).scroll(()=>{
                     break;
             }
         }
-        lastScrollTop = st;
     }
+    lastScrollTop = st;
 });
